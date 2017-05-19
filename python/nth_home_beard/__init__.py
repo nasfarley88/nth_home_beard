@@ -1,7 +1,7 @@
 import asyncio
 
 from skybeard.beards import BeardChatHandler
-from skybeard.decorators import onerror, getargs
+from skybeard.decorators import onerror, getargs, admin
 
 # plug_control
 try:
@@ -26,6 +26,7 @@ class NthHomeBeard(BeardChatHandler):
     ]
 
     @onerror()
+    @admin()
     @getargs()
     async def start_bottle_warmer(self, msg, timeout=4.5*60):
         e.switch_on(1)
