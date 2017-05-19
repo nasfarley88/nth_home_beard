@@ -27,7 +27,7 @@ class NthHomeBeard(BeardChatHandler):
 
     @onerror()
     @getargs()
-    async def start_bottle_warmer(self, msg, timeout=30):
+    async def start_bottle_warmer(self, msg, timeout=4.5*60):
         e.switch_on(1)
         await self.sender.sendMessage("Started bottle warmer.")
         await asyncio.sleep(timeout)
